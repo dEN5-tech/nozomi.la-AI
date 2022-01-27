@@ -1,5 +1,6 @@
 from parameters import JOB_POOL_SIZE, PORT
 
+import os
 from threading import Semaphore, Lock, Thread
 from myhttp import Server, OneServer, respond
 from collections import namedtuple
@@ -92,6 +93,6 @@ class MyServer(Server):
       self.close()
 
 def startServer():
-  server = MyServer(MyOneServer, PORT, name='localhost')
+  server = MyServer(MyOneServer, PORT, name=os.environ.get('HOST', None))
   server.start()
   return server
