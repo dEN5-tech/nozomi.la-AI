@@ -14,7 +14,6 @@ def main():
   parseBlacklist()
   if not DEBUG:
     myhttp.myLogger.verbose = False
-    webbrowser.open(f'http://localhost:{PORT}/welcome.html')
   server = startServer()
   try:
     roll()
