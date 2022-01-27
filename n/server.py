@@ -88,9 +88,6 @@ class MyServer(Server):
     global trusted_ip
     if not trusted_ip:
       trusted_ip = addr[0]
-    elif addr[0] != trusted_ip:
-      print('SOMEONE IS ATTACKING!', addr)
-      self.close()
 
 def startServer():
   server = MyServer(MyOneServer, PORT, name=os.environ.get('HOST', None))
