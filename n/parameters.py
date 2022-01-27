@@ -1,3 +1,5 @@
+import os
+
 DEBUG = False
 START_EPOCH = 0
 
@@ -8,9 +10,9 @@ ATTITUDE_TOWARDS_NOVEL_TAGS = 1
 
 JOB_POOL_SIZE = 8
 JSON_MAX = 16
-PORT = 2348
+PORT = os.environ.get('PORT', None)
 
-FILTER = ''
+FILTER = os.environ.get('FILTER', None)
 
 # Below are default values. 
 # DEBUG = False
