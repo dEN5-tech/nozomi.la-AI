@@ -10,6 +10,7 @@ ATTITUDE_TOWARDS_NOVEL_TAGS = 1
 
 JOB_POOL_SIZE = int(os.environ.get('JOB_POOL_SIZE', None))
 JSON_MAX = int(os.environ.get('JSON_MAX', None))
+print(int(os.environ.get('PORT', None)))
 PORT = int(os.environ.get('PORT', None))
 
 FILTER = os.environ.get('FILTER', None)
