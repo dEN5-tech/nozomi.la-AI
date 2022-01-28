@@ -30,14 +30,7 @@ from ai import recordResponse
 class MyOneServer(OneServer):
   def handle(self, request):
     if request.target == '/':
-      with open('index.html', 'rb') as f:
-        respond(self.socket, f.read())
-    elif request.target in ['/styles.css', '/scripts.js', '/welcome.html']:
-      with open(request.target.lstrip('/'), 'rb') as f:
-        respond(self.socket, f.read())
-    elif request.target == '/':
-      with open('index.html', 'rb') as f:
-        respond(self.socket, f.read())
+      pass
     elif request.target.split('?')[0] == '/next':
       g.conSem.acquire()
       with g.jobsLock:
